@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul 11</title>
+  <link rel="stylesheet" href="my.css">
+</head>
+
+<body>
+  <div class="main">
+    <form class="form js-form">
+      <section>
+        <h2>Screen size</h2>
+        <ul>
+          <li><label><input type="checkbox" name="size" value="13"> 13"</label></li>
+          <li><label><input type="checkbox" name="size" value="15"> 15"</label></li>
+          <li><label><input type="checkbox" name="size" value="17"> 17"</label></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Color</h2>
+        <ul>
+          <li><label><input type="checkbox" name="color" value="white"> white</label></li>
+          <li><label><input type="checkbox" name="color" value="gray"> gray</label></li>
+          <li><label><input type="checkbox" name="color" value="black"> black</label></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Release date</h2>
+        <ul>
+          <li><label><input type="checkbox" name="release_date" value="2015"> 2015</label></li>
+          <li><label><input type="checkbox" name="release_date" value="2016"> 2016</label></li>
+          <li><label><input type="checkbox" name="release_date" value="2017"> 2017</label></li>
+        </ul>
+      </section>
+      <button type="submit" class="btn-filter">Filter</button>
+      <button type="reset" class="btn-clear">Clear</button>
+    </form>
+
+    <li id="data-cards"></li>
+  </div>
+
+
+  <template id="laptops-card">
+    {{#each laptops}}
+    <div class="card">
+      <img src="{{img}}">
+      <h3 class="name">{{name}}</h3>
+      <p class="color"><span class="text">Color:</span> {{color}}</p>
+      <p class="release"> Release date: {{release_date}}</p>
+      <p class="description">Description: {{descr}}</p>
+      <p class="price"><b> Price: UAH {{price}}</b></p>
+    </div>
+    {{/each}}
+  </template>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script src="my.js"></script>
+</body>
+
+</html>
